@@ -45,6 +45,8 @@
 
 <script>
 
+		var inhibitOptions = false;
+
     $(document).ready(function() {
 		
 				$("#optionA").html(config.optionA);
@@ -57,7 +59,10 @@
         // Handle user interaction to switch to the question
         $('#video-container').on('click touchstart', function() {
             $('#video-container').hide();
-            $('#question-container').fadeIn();
+						inhibitOptions=true;						
+            $('#question-container').fadeIn(function(){
+							inhibitOptions=false;
+						});
         });
 								
 
@@ -90,18 +95,24 @@
 
         // Handle button clicks for each option
         $('#optionA').click(function() {
+					if(!inhibitOptions){
             tallyResult('optionA');
             displayThankYou();
+					}
         });
 
         $('#optionB').click(function() {
+					if(!inhibitOptions){
             tallyResult('optionB');
             displayThankYou();
+					}
         });
 
         $('#optionC').click(function() {
+					if(!inhibitOptions){
             tallyResult('optionC');
             displayThankYou();
+					}
         });				
 
         // Function to display the "Thank You" message
