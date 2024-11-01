@@ -46,6 +46,10 @@
 <script>
 
 		var inhibitOptions = false;
+		
+		function failureFeedback(message){
+			alert("Oops!  Your pledge was recorded locally, but we couldn't record it on the server.  This could be due to a network issue.  The specific error is: " + message);
+		}
 
     $(document).ready(function() {
 		
@@ -85,10 +89,12 @@
 										"timestamp": Date.now()
 				        },
 				        success: function(response) {
-				            console.log(response);
+				            if(!response.success){
+											failureFeedback("Unexpected response from server.");
+										}										
 				        },
 				        error: function(jqXHR, textStatus, errorThrown) {
-				            console.error("Error:", textStatus, errorThrown);
+									failureFeedback("Exception when sending to the server: " + textStatus);				            
 				        }
 				   	});						
 					}

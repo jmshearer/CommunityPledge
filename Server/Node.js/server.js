@@ -17,7 +17,8 @@ app.get('/report', (req, res) => {
 
     // Response data
     const response = {
-        message: "Data received",
+        success: true,
+				message: "Data received",
         option: option,
         placeIdentifier: placeIdentifier,
         timestamp: timestamp

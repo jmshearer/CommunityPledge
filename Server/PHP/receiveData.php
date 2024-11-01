@@ -14,7 +14,7 @@ if ($callback) {
     file_put_contents('data.log', $logEntry, FILE_APPEND);
 
     // Prepare JSONP response
-    $response = array("message" => "Data received", "option" => $option);
+    $response = array("success" => true, "message" => "Data received", "option" => $option);
     echo $callback . '(' . json_encode($response) . ');';
 } else {
     // If no callback is provided, return an error message
