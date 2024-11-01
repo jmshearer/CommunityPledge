@@ -67,6 +67,24 @@
 						let newCount = parseInt(count) + 1;						
             localStorage.setItem(option, newCount);
 						console.log(option + ": " + newCount)
+						
+						if(config.reportingUrl){
+							$.ajax({
+					      url: config.reportingUrl,
+				        dataType: 'jsonp',
+				        jsonp: 'callback',
+				        data: {
+				            "option": option,
+										"placeIdentifier": config.placeIdentifier
+				        },
+				        success: function(response) {
+				            console.log(response);
+				        },
+				        error: function(jqXHR, textStatus, errorThrown) {
+				            console.error("Error:", textStatus, errorThrown);
+				        }
+				   	});						
+					}
         }
 
         // Handle button clicks for each option
