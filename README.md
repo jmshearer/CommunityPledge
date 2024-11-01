@@ -20,15 +20,21 @@ Voting is one way we contribute to society, but it's often the everyday acts of 
 
 ## Getting Started
 
+### Installation
 To set up the website locally for development or testing, follow these steps:
 
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/yourusername/community-commitment-kiosk.git
+   git clone https://github.com/jmshearer/community-commitment-kiosk.git
 
 2. Open the `index.html` file in your preferred browser to preview.
 
-*Note*: This kiosk setup assumes use with a touch-screen device at a stationary location, such as a polling place.
+*Note*: This kiosk setup assumes use with a touch-screen device at a stationary location, such as a polling place.  Data is tabulated primarily using localStorage.
+
+### Viewing Results
+
+1. Open `admin.html` to view or reset tabulated results.
+
 
 ## Contributing
 
