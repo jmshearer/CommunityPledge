@@ -15,7 +15,7 @@ function doGet(e) {
     sheet.appendRow([new Date(), placeIdentifier, option]);
 
     // Prepare the JSONP response
-    const result = JSON.stringify({ message: "Data received", option: option });
+    const result = JSON.stringify({success: true, message: "Data received", option: option });
     return ContentService
         .createTextOutput(callback + "(" + result + ")")
         .setMimeType(ContentService.MimeType.JAVASCRIPT);
