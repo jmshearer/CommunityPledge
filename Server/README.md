@@ -4,7 +4,7 @@ Realtime data can be sent back to a backend server via JSONP (easiest method for
 
 ## Data Format
 
-The following values are passed to the server:
+**Query**: The following values are passed to the server:
 
 | Parameter    | Value |
 | -------- | ------- |
@@ -12,7 +12,12 @@ The following values are passed to the server:
 | `placeIdentifier` | Place identifier specified in `config.js`     |
 | `timestamp` | Date/timestamp of request (used primarily to bust the cache) |
 
-The server must respond with a JSON object that, at a minimum contains a boolean `success` value.
+**Response**: The server must respond with a JSON object that, at a minimum contains a boolean `success` value.  Sample response:
+
+```
+{"success": true, "message": "Data Received"}
+```
+
 
 ## Sample Receivers
 
