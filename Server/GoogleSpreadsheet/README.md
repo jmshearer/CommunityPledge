@@ -1,6 +1,6 @@
 # Google Spreadsheet Receiver
 
-1. Create a Google Sheet and open Extensions > Apps Script
+1. Create a **Google Sheet** and open **Extensions > Apps Script**
 
 2. Set up the script:
 
@@ -23,6 +23,6 @@ function doGet(e) {
 
 ```
 
-3. Deploy as Web App: Under Deploy > Manage Deployments, select "Web app," and make it accessible to "Anyone."
+3. **Deploy as Web App:** Under Deploy > Manage Deployments, select "Web app," and make it accessible to "Anyone."
 
-4. Copy the deployment URL and past into `reportingUrl` in `config.js`
+4. **Copy the deployment URL** and past into `reportingUrl` in `config.js`
