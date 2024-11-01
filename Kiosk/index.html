@@ -75,7 +75,8 @@
 				        jsonp: 'callback',
 				        data: {
 				            "option": option,
-										"placeIdentifier": config.placeIdentifier
+										"placeIdentifier": config.placeIdentifier,
+										"timestamp": Date.now()
 				        },
 				        success: function(response) {
 				            console.log(response);
