@@ -31,7 +31,11 @@ To set up the website locally, follow these steps:
    ```bash
    git clone https://github.com/jmshearer/community-commitment-kiosk.git
 
-2. Open the `index.html` file in your preferred browser, prefeably in full-screen mode.
+2. ```cd Kiosk```
+
+3. Rename `config.example.js` to `config.js` and modify as desired.
+
+4. Open the `index.html` file in your preferred browser, prefeably in full-screen mode.
 
 ### Viewing Results
 
