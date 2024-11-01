@@ -43,7 +43,11 @@ To set up the website locally, follow these steps:
 
 ### Configuration Options
 
-The 3 options are held in `config.js`, along with a reportingUrl which can report votes to a RESTful API (eventually!)
+The 3 options are held in `config.js`, along with a reportingUrl which can report votes to a RESTful API
+
+## Server Configuration (optional)
+Realtime data can be sent to a RESTful API via JSONP.  Refer to [Server Documentation](/Server)
+
 
 
 ## Contributing
