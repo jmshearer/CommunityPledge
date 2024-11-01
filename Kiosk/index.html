@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Video Page</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">		
+    <link rel="stylesheet" href="css/main.css">
+	</head>
+<body>
+
+<!-- Full-Screen Video -->
+<div id="video-container">
+		<div id="touchHere"><img src="assets/touch-icon.gif" />Touch the screen</div>	
+    <video id="idle-video" muted autoplay loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+        <source src="assets/idle.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Question and Options -->
+<div id="question-container">
+    <h1 id="question">What's one step <strong>you</strong> pledge to take to help make our community better?</h1>
+    <button class="btn btn-primary btn-lg" id="optionA">Pick up trash.</button>
+    <button class="btn btn-secondary btn-lg" id="optionB">Say "hello" to my neighbor.</button>
+    <button class="btn btn-success btn-lg" id="optionC">Option C</button>
+		<button class="btn btn-light btn-sm" id="noThanks">No thanks</button>
+			
+</div>
+
+<!-- Thank You Message -->
+<div id="thank-you">
+    Thank you for pledging to make our community better!
+		<br />
+		<br />
+		<img src="assets/logo.png" alt="Community Pledge Logo" width="300" />		
+</div>
+
+<!-- Include jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+			
+		
+        // Initialize by showing the video
+        $('#video-container').show();
+
+        // Handle user interaction to switch to the question
+        $('#video-container').on('click touchstart', function() {
+            $('#video-container').hide();
+            $('#question-container').fadeIn();
+        });
+								
+
+        // Function to tally the results in localStorage
+        function tallyResult(option) {
+            let count = localStorage.getItem(option) || 0;
+						let newCount = parseInt(count) + 1;						
+            localStorage.setItem(option, newCount);
+						console.log(option + ": " + newCount)
+        }
+
+        // Handle button clicks for each option
+        $('#optionA').click(function() {
+            tallyResult('optionA');
+            displayThankYou();
+        });
+
+        $('#optionB').click(function() {
+            tallyResult('optionB');
+            displayThankYou();
+        });
+
+        $('#optionC').click(function() {
+            tallyResult('optionC');
+            displayThankYou();
+        });				
+
+        // Function to display the "Thank You" message
+				var autoReset=false;
+        function displayThankYou() {
+            $('#question-container').hide();
+            $('#thank-you').fadeIn();
+
+            // Return to the video after a few seconds
+            autoReset = setTimeout(function() {
+                reset();
+            }, 3000); // 3 seconds
+        }
+				
+				$("#noThanks").click(function(){
+					$('#video-container').fadeIn();
+				});
+								
+				$("#thank-you").click(function(){				
+					reset();
+				});
+				
+				function reset(){
+					if(autoReset){
+						clearTimeout(autoReset);
+					}
+					$('#thank-you').fadeOut(function() {
+              $('#video-container').fadeIn();
+          });				
+				}
+								
+    });
+</script>
+
+</body>
+</html>

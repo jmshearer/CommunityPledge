@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Results</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Results Dashboard</h1>
+    <p>View the tally for each option and reset them if needed.</p>
+
+    <!-- Table to Display Results -->
+    <table class="table table-bordered" id="results-table">
+        <thead>
+            <tr>
+                <th>Option</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Option A</td>
+                <td id="resultA">0</td>
+            </tr>
+            <tr>
+                <td>Option B</td>
+                <td id="resultB">0</td>
+            </tr>
+            <tr>
+                <td>Option C</td>
+                <td id="resultC">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Button to Clear Results -->
+    <button class="btn btn-danger" id="clear-results">Clear Results</button>
+		<button class="btn btn-success" id="home">Home</button>
+</div>
+
+<!-- Include jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Function to load results from localStorage
+        function loadResults() {
+            $('#resultA').text(localStorage.getItem('optionA') || 0);
+            $('#resultB').text(localStorage.getItem('optionB') || 0);
+            $('#resultC').text(localStorage.getItem('optionC') || 0);
+        }
+
+        // Load results on page load
+        loadResults();
+
+        // Clear results from localStorage and update the display							
+        $('#clear-results').click(function() {
+            if (confirm("Are you sure you want to clear all results?")) {
+                localStorage.removeItem('optionA');
+                localStorage.removeItem('optionB');
+                localStorage.removeItem('optionC');
+                loadResults();
+            }
+        });
+				
+				$("#home").click(function(){
+					window.location.href = "index.html";				
+				});
+    });
+</script>
+
+</body>
+</html>
+
