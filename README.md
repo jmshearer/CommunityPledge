@@ -37,6 +37,10 @@ To set up the website locally, follow these steps:
 
 1. Open `admin.html` to view or reset tabulated results.
 
+### Configuration Options
+
+The 3 options are held in `config.js`, along with a reportingUrl which can report votes to a RESTful API (eventually!)
+
 
 ## Contributing
 
