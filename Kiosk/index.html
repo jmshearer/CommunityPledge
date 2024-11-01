@@ -58,11 +58,12 @@
 
         // Handle user interaction to switch to the question
         $('#video-container').on('click touchstart', function() {
-            $('#video-container').hide();
-						inhibitOptions=true;						
-            $('#question-container').fadeIn(function(){
-							inhibitOptions=false;
-						});
+					inhibitOptions=true;
+          $('#video-container').hide();						
+					setTimeout(function(){					
+						inhibitOptions=false;
+					}, 750);				
+          $('#question-container').fadeIn();
         });
 								
 
