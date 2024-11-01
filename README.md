@@ -2,7 +2,7 @@
 
 ![Community Pledge Logo](Resources/Community%20Pledge%20Logo%20Small.png)
 
-This repository contains the code for a kiosk-based website that encourages community service and commitment. Hosted at our local polling place, this project invites each voter to pledge one action from a list of three simple, impactful commitments they will undertake to make our community a better place.
+This repository contains the code and resources for a kiosk-based website that encourages community service and commitment. Hosted at our local polling place, this project invites each voter to pledge one action from a list of three simple, impactful commitments they will undertake to make our community a better place.
 
 ## About the Project
 
@@ -22,16 +22,16 @@ Voting is one way we contribute to society, but it's often the everyday acts of 
 
 ## Getting Started
 
+*Note*: This kiosk setup assumes use with a touch-screen device at a stationary location, such as a polling place.  Data is tabulated primarily using localStorage so data will be local to each device.
+
 ### Installation
-To set up the website locally for development or testing, follow these steps:
+To set up the website locally, follow these steps:
 
 1. Clone this repository:  
    ```bash
    git clone https://github.com/jmshearer/community-commitment-kiosk.git
 
-2. Open the `index.html` file in your preferred browser to preview.
-
-*Note*: This kiosk setup assumes use with a touch-screen device at a stationary location, such as a polling place.  Data is tabulated primarily using localStorage.
+2. Open the `index.html` file in your preferred browser, prefeably in full-screen mode.
 
 ### Viewing Results
 
