@@ -26,15 +26,15 @@
         </thead>
         <tbody>
             <tr>
-                <td>Option A</td>
+                <td id="labelA">Option A</td>
                 <td id="resultA">0</td>
             </tr>
             <tr>
-                <td>Option B</td>
+                <td id="labelB">Option B</td>
                 <td id="resultB">0</td>
             </tr>
             <tr>
-                <td>Option C</td>
+                <td id="labelC">Option C</td>
                 <td id="resultC">0</td>
             </tr>
         </tbody>
@@ -48,10 +48,15 @@
 <!-- Include jQuery and Bootstrap JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="config.js"></script>
 
 <script>
     $(document).ready(function() {
-        // Function to load results from localStorage
+        // Function to load results from localStorage				
+				$("#labelA").html("Option A<br />" + config.optionA);
+				$("#labelB").html("Option B<br />" + config.optionB);
+				$("#labelC").html("Option C<br />" + config.optionC);
+				
         function loadResults() {
             $('#resultA').text(localStorage.getItem('optionA') || 0);
             $('#resultB').text(localStorage.getItem('optionB') || 0);

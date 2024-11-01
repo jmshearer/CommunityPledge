@@ -23,9 +23,9 @@
 <!-- Question and Options -->
 <div id="question-container">
     <h1 id="question">What's one step <strong>you</strong> pledge to take to help make our community better?</h1>
-    <button class="btn btn-primary btn-lg" id="optionA">Pick up trash around town</button>
-    <button class="btn btn-secondary btn-lg" id="optionB">Say "hello" to my neighbor</button>
-    <button class="btn btn-success btn-lg" id="optionC">Hold the door for someone</button>
+    <button class="btn btn-primary btn-lg" id="optionA"></button>
+    <button class="btn btn-secondary btn-lg" id="optionB"></button>
+    <button class="btn btn-success btn-lg" id="optionC"></button>
 		<button class="btn btn-light btn-sm" id="noThanks">No thanks</button>
 			
 </div>
@@ -41,11 +41,16 @@
 <!-- Include jQuery and Bootstrap JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="config.js"></script>
 
 <script>
+
     $(document).ready(function() {
-			
 		
+				$("#optionA").html(config.optionA);
+				$("#optionB").html(config.optionB);
+				$("#optionC").html(config.optionC);
+				
         // Initialize by showing the video
         $('#video-container').show();
 
