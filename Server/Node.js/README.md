@@ -7,13 +7,14 @@
 
 ## Installation
 
-1. Install dependencies
+1. Navigate to the Node.js path in this repository
+2. Install dependencies
 
 ```
 npm install
 ```
 
-2. Run the server
+3. Run the server
 
 ```
 node server.js
