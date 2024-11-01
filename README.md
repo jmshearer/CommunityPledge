@@ -39,7 +39,7 @@ To set up the website locally, follow these steps:
 
 ### Viewing Results
 
-1. Open `admin.html` to view or reset tabulated results.
+1. Open `admin.html` to view or reset locally-tabulated results.
 
 ### Configuration Options
 
