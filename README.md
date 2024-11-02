@@ -2,7 +2,7 @@
 
 ![Community Pledge Logo](Resources/Community%20Pledge%20Logo%20Small.png)
 
-This repository contains the code and resources for a kiosk-based website that encourages community service and commitment. Hosted at our local polling place, this project invites each voter to pledge one action from a list of three simple, impactful commitments they will undertake to make our community a better place.
+This repository contains the code and resources for a kiosk-based website that encourages community service and commitment. Hosted at our local polling place, this project invites each voter to pledge one action from a list of three simple, impactful commitments they will undertake to make our community a better place.  Anyone is welcome to use this project for the intended [apolitical use](LICENSE.md).
 
 ## About the Project
 
